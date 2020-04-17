@@ -13,7 +13,7 @@ ALLOWED_HOST=localhost
 # If you are serving content behind an HTTPS proxy,
 # Set this to `true`.
 # See: https://docs.djangoproject.com/en/1.10/ref/settings/#secure-proxy-ssl-header
-HTTP_X_FORWARDED_PROTO=false
+HTTP_X_FORWARDED_PROTO=true
 
 # Node config
 NODE_ENV=production
