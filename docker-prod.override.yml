@@ -1,0 +1,18 @@
+version: '2.3'
+services:
+  nginx:
+    container_name: openeats
+    hostname: openeats
+    ports:
+      - "7000:80"
+    volumes:
+      - C:\OpenEats\certs:/etc/nginx/certs
+    restart: always
+  api:
+    restart: always
+  web:
+    restart: on-failure
+  db:
+    restart: always
+    ports:
+      - "3306:3306"
