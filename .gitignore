@@ -21,3 +21,12 @@ secrets/*
 
 *.pem
 env_prod.list
+backup-Feb2021/*
+public-ui/*
+static-files/*
+database/*
+certs/*
+site-media/*
+
+openeats.sql
+openeats.sql

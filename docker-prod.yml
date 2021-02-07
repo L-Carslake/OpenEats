@@ -5,8 +5,8 @@ services:
     command: /startup/prod-entrypoint.sh
     restart: on-failure
     volumes:
-      - static-files:/code/static-files
-      - site-media:/code/site-media
+      - .\static-files:/code/static-files
+      - .\site-media:/code/site-media
     depends_on:
       db:
         condition: service_healthy
@@ -18,7 +18,7 @@ services:
     depends_on:
       - api
     volumes:
-      - public-ui:/code/build
+      - .\public-ui:/code/build
     env_file:
       env_prod.list
   db:
@@ -33,9 +33,9 @@ services:
     image: openeats/openeats-nginx
     command: ./start.sh
     volumes:
-      - static-files:/var/www/html/openeats-static/static-files
-      - site-media:/var/www/html/openeats-static/site-media
-      - public-ui:/var/www/html/openeats-static/public-ui
+      - .\static-files:/var/www/html/openeats-static/static-files
+      - .\site-media:/var/www/html/openeats-static/site-media
+      - .\public-ui:/var/www/html/openeats-static/public-ui
     depends_on:
       - api
       - web
